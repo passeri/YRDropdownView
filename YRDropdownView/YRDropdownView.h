@@ -13,8 +13,8 @@ typedef void (^YRTapBlock)(void);
 
 @interface YRDropdownView : UIView
 {
-    NSString *titleText;
-    NSString *detailText;
+    NSAttributedString *titleText;
+    NSAttributedString *detailText;
     UILabel *titleLabel;
     UILabel *detailLabel;
     //UIImage *backgroundImage;
@@ -31,8 +31,8 @@ typedef void (^YRTapBlock)(void);
     dispatch_queue_t    _tapQueue;
 }
 
-@property (copy) NSString *titleText;
-@property (copy) NSString *detailText;
+@property (copy) NSAttributedString *titleText;
+@property (copy) NSAttributedString *detailText;
 
 #if !(__has_feature(objc_arc))
 @property (nonatomic, retain) UIImage *accessoryImage;
@@ -53,41 +53,41 @@ typedef void (^YRTapBlock)(void);
 #pragma mark - View methods
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title;
+                                 title:(NSAttributedString *)title;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail;
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                               animated:(BOOL)animated;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                               animated:(BOOL)animated;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                               animated:(BOOL)animated
                              hideAfter:(float)delay;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                        backgroundImage:(UIImage *)backgroundImage
                               animated:(BOOL)animated
                              hideAfter:(float)delay;
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view
-                                 title:(NSString *)title
-                                detail:(NSString *)detail
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                        backgroundImage:(UIImage *)backgroundImage
                        titleLabelColor:(UIColor *)titleLabelColor

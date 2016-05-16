@@ -27,8 +27,8 @@
 @end
 
 @interface YRDropdownView ()
-- (void)updateTitleLabel:(NSString *)newText;
-- (void)updateDetailLabel:(NSString *)newText;
+- (void)updateTitleLabel:(NSAttributedString *)newText;
+- (void)updateDetailLabel:(NSAttributedString *)newText;
 - (void)hideUsingAnimation:(NSNumber *)animated;
 - (void)done;
 @end
@@ -57,12 +57,12 @@ static YRDropdownView *currentDropdown = nil;
 
 #pragma mark - Accessors
 
-- (NSString *)titleText
+- (NSAttributedString *)titleText
 {
     return titleText;
 }
 
-- (void)setTitleText:(NSString *)newText
+- (void)setTitleText:(NSAttributedString *)newText
 {
     if ([NSThread isMainThread]) {
 		[self updateTitleLabel:newText];
@@ -75,12 +75,12 @@ static YRDropdownView *currentDropdown = nil;
 	}
 }
 
-- (NSString *)detailText
+- (NSAttributedString *)detailText
 {
     return detailText;
 }
 
-- (void)setDetailText:(NSString *)newText
+- (void)setDetailText:(NSAttributedString *)newText
 {
     if ([NSThread isMainThread]) {
         [self updateDetailLabel:newText];
@@ -93,7 +93,7 @@ static YRDropdownView *currentDropdown = nil;
     }
 }
 
-- (void)updateTitleLabel:(NSString *)newText {
+- (void)updateTitleLabel:(NSAttributedString *)newText {
     if (titleText != newText) {
     #if !__has_feature(objc_arc)
         [titleText release];
@@ -103,7 +103,7 @@ static YRDropdownView *currentDropdown = nil;
     }
 }
 
-- (void)updateDetailLabel:(NSString *)newText {
+- (void)updateDetailLabel:(NSAttributedString *)newText {
     if (detailText != newText) {
     #if !__has_feature(objc_arc)
         [detailText release];
@@ -161,29 +161,29 @@ static YRDropdownView *currentDropdown = nil;
 #pragma mark - Class methods
 #pragma mark View Methods
 
-+ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSString *)title
++ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSAttributedString *)title
 {
     return [YRDropdownView showDropdownInView:view title:title detail:nil];
 }
 
-+ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSString *)title detail:(NSString *)detail
++ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSAttributedString *)title detail:(NSAttributedString *)detail
 {
     return [YRDropdownView showDropdownInView:view title:title detail:detail image:nil animated:YES];
 }
 
-+ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSString *)title detail:(NSString *)detail animated:(BOOL)animated
++ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSAttributedString *)title detail:(NSAttributedString *)detail animated:(BOOL)animated
 {
     return [YRDropdownView showDropdownInView:view title:title detail:detail image:nil animated:animated hideAfter:0.0];
 }
 
-+ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSString *)title detail:(NSString *)detail image:(UIImage *)image animated:(BOOL)animated
++ (YRDropdownView *)showDropdownInView:(UIView *)view title:(NSAttributedString *)title detail:(NSAttributedString *)detail image:(UIImage *)image animated:(BOOL)animated
 {
     return [YRDropdownView showDropdownInView:view title:title detail:detail image:image animated:animated hideAfter:0.0];
 }
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view 
-                                 title:(NSString *)title 
-                                detail:(NSString *)detail 
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                               animated:(BOOL)animated
                              hideAfter:(float)delay
@@ -198,8 +198,8 @@ static YRDropdownView *currentDropdown = nil;
 }
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view 
-                                 title:(NSString *)title 
-                                detail:(NSString *)detail 
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                        backgroundImage:(UIImage *)backgroundImage
                               animated:(BOOL)animated
@@ -217,8 +217,8 @@ static YRDropdownView *currentDropdown = nil;
 }
 
 + (YRDropdownView *)showDropdownInView:(UIView *)view 
-                                 title:(NSString *)title 
-                                detail:(NSString *)detail 
+                                 title:(NSAttributedString *)title
+                                detail:(NSAttributedString *)detail
                                  image:(UIImage *)image
                        backgroundImage:(UIImage *)backgroundImage
                        titleLabelColor:(UIColor *)titleLabelColor 
