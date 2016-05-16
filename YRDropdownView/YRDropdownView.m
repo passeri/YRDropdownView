@@ -392,7 +392,7 @@ static YRDropdownView *currentDropdown = nil;
 
 - (void)layoutSubviews {    
     // Set label properties
-//    titleLabel.font = [UIFont boldSystemFontOfSize:TITLE_FONT_SIZE];
+    titleLabel.font = [UIFont boldSystemFontOfSize:TITLE_FONT_SIZE];
     titleLabel.adjustsFontSizeToFitWidth = NO;
     titleLabel.opaque = YES;
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -423,7 +423,7 @@ static YRDropdownView *currentDropdown = nil;
     [self addSubview:titleLabel];
     
     if (self.detailText) {
-//        detailLabel.font = [UIFont systemFontOfSize:DETAIL_FONT_SIZE];
+        detailLabel.font = [UIFont systemFontOfSize:DETAIL_FONT_SIZE];
         detailLabel.numberOfLines = 0;
         detailLabel.adjustsFontSizeToFitWidth = NO;
         detailLabel.opaque = YES;
