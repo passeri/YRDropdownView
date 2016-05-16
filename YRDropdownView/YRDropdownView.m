@@ -392,7 +392,7 @@ static YRDropdownView *currentDropdown = nil;
 
 - (void)layoutSubviews {    
     // Set label properties
-    titleLabel.font = [UIFont boldSystemFontOfSize:TITLE_FONT_SIZE];
+//    titleLabel.font = [UIFont boldSystemFontOfSize:TITLE_FONT_SIZE];
     titleLabel.adjustsFontSizeToFitWidth = NO;
     titleLabel.opaque = YES;
     titleLabel.backgroundColor = [UIColor clearColor];
@@ -412,7 +412,7 @@ static YRDropdownView *currentDropdown = nil;
         titleLabel.shadowOffset = CGSizeMake(0, 1/[[UIScreen mainScreen] scale]);
     }
 
-    titleLabel.text = self.titleText;
+    titleLabel.attributedText = self.titleText;
     [titleLabel sizeToFitFixedWidth:self.bounds.size.width - (2 * HORIZONTAL_PADDING)];
     
     titleLabel.frame = CGRectMake(self.bounds.origin.x + HORIZONTAL_PADDING, 
@@ -423,7 +423,7 @@ static YRDropdownView *currentDropdown = nil;
     [self addSubview:titleLabel];
     
     if (self.detailText) {
-        detailLabel.font = [UIFont systemFontOfSize:DETAIL_FONT_SIZE];
+//        detailLabel.font = [UIFont systemFontOfSize:DETAIL_FONT_SIZE];
         detailLabel.numberOfLines = 0;
         detailLabel.adjustsFontSizeToFitWidth = NO;
         detailLabel.opaque = YES;
@@ -444,7 +444,7 @@ static YRDropdownView *currentDropdown = nil;
             detailLabel.shadowOffset = CGSizeMake(0, 1/[[UIScreen mainScreen] scale]);
         }
 
-        detailLabel.text = self.detailText;
+        detailLabel.attributedText = self.detailText;
         [detailLabel sizeToFitFixedWidth:self.bounds.size.width - (2 * HORIZONTAL_PADDING)];
         
         detailLabel.frame = CGRectMake(self.bounds.origin.x + HORIZONTAL_PADDING, 
