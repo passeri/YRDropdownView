@@ -154,8 +154,8 @@ static YRDropdownView *currentDropdown = nil;
 #define HORIZONTAL_PADDING 15.0f
 #define VERTICAL_PADDING 15.0f
 #define IMAGE_PADDING 45.0f
-#define TITLE_FONT_SIZE 10.0f
-#define DETAIL_FONT_SIZE 8.0f
+#define TITLE_FONT_SIZE 12.0f
+#define DETAIL_FONT_SIZE 10.0f
 #define ANIMATION_DURATION 0.3f
 
 #pragma mark - Class methods
